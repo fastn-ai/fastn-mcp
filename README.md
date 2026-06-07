@@ -1,10 +1,10 @@
 # Fastn MCP Server
 
-**Give your AI agents and apps instant, secure access to 250+ enterprise systems.**
+**Give your AI agents and apps secure, governed access to your customers' tools and systems through one multi-tenant MCP endpoint.**
 
-Fastn MCP Server is a production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) gateway that connects AI agents and apps to Slack, Jira, GitHub, Salesforce, HubSpot, Postgres, and 200+ more services — with fully managed auth, governed access, and sub-second execution.
+Part of Fastn, the embedded integration platform for SaaS products and AI agents. Fastn MCP Server is a production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) gateway that connects AI agents and apps to Slack, Jira, GitHub, Salesforce, HubSpot, Postgres, and 200+ more services, with fully managed auth, governed multi-tenant access, and sub-second execution.
 
-Built on the [Fastn SDK](https://github.com/fastnai/fastn-sdk), this server exposes MCP tools that any compatible AI platform can use out of the box.
+Built on the [Fastn SDK](https://github.com/fastn-ai/fastn-sdk), this server exposes MCP tools that any compatible AI platform can use out of the box.
 
 ## Why Fastn MCP Server?
 
@@ -12,7 +12,7 @@ Built on the [Fastn SDK](https://github.com/fastnai/fastn-sdk), this server expo
 |---------|-------------|
 | **250+ Connectors** | Slack, Jira, GitHub, Salesforce, HubSpot, Postgres, Stripe, Notion, Linear, and more |
 | **MCP Native** | Works with Claude Desktop, Cursor, Lovable, Bolt, v0, and any MCP-compatible client |
-| **Fully Managed Auth** | OAuth 2.1 for every connector — no token management, no app registration, no refresh handling |
+| **Fully Managed Auth** | OAuth 2.1 for every connector, no token management, no app registration, no refresh handling |
 | **Governed Access** | Role-based permissions, audit trails, and enterprise compliance controls |
 | **SOC 2 Certified** | Enterprise-grade security and compliance built into the platform |
 | **Sub-Second Execution** | Direct API calls through the Fastn platform with built-in caching and connection pooling |
@@ -28,7 +28,7 @@ Create an account and connect your first connectors (Gmail, Slack, GitHub, etc.)
 
 ### 2. Connect your MCP client
 
-**Hosted server (recommended)** — no installation needed:
+**Hosted server (recommended)**, no installation needed:
 
 ```
 https://mcp.live.fastn.ai/shttp
@@ -36,7 +36,7 @@ https://mcp.live.fastn.ai/shttp
 
 Point any MCP client at this URL. Authentication is handled via MCP OAuth 2.1 automatically. See [Client Configuration](#client-configuration) for Claude Desktop and Cursor examples.
 
-**Self-hosted** — install and run your own instance:
+**Self-hosted**, install and run your own instance:
 
 ```bash
 pip install fastn-mcp-server
@@ -72,7 +72,7 @@ The MCP server supports three authentication methods. Get your credentials from 
 
 #### MCP OAuth 2.1 (Recommended)
 
-Standard MCP OAuth flow with PKCE. The server bridges to Fastn's identity provider automatically. Just point your client at the URL — you'll be prompted to authenticate:
+Standard MCP OAuth flow with PKCE. The server bridges to Fastn's identity provider automatically. Just point your client at the URL, you'll be prompted to authenticate:
 
 ```json
 {
@@ -220,7 +220,7 @@ For Cursor, use the `/shttp/tools` endpoint to expose only Fastn tools (recommen
 
 ### Transport Modes
 
-**stdio (local)** — For pipe-based clients:
+**stdio (local)**, For pipe-based clients:
 
 ```bash
 fastn-mcp --stdio
@@ -229,7 +229,7 @@ fastn-mcp --stdio --mode tools --project ID              # Fastn tools + pre-set
 fastn-mcp --stdio --mode tools --project ID --skill ID   # Fastn tools + pre-set project and skill
 ```
 
-**SSE + Streamable HTTP (remote)** — For web-based AI platforms:
+**SSE + Streamable HTTP (remote)**, For web-based AI platforms:
 
 ```bash
 fastn-mcp --sse --shttp --port 8000
@@ -291,7 +291,7 @@ FASTN_MCP_VERBOSE=false
 
 ### Local Development with ngrok
 
-For local development and testing only — use ngrok to expose your local server:
+For local development and testing only, use ngrok to expose your local server:
 
 ```bash
 # Terminal 1: Start the MCP server
@@ -316,7 +316,7 @@ For production, deploy with Docker behind a reverse proxy with a real domain.
 ### Setup
 
 ```bash
-git clone https://github.com/fastnai/fastn-mcp.git
+git clone https://github.com/fastn-ai/fastn-mcp.git
 cd fastn-mcp
 python -m venv .venv
 source .venv/bin/activate
@@ -391,7 +391,7 @@ Fastn provides 250+ pre-built connectors including:
 
 **Finance:** Stripe, QuickBooks, Xero
 
-**And 200+ more** — browse the full catalog at [fastn.ai/integrations](https://fastn.ai/integrations)
+**And 200+ more**, browse the full catalog at [fastn.ai/integrations](https://fastn.ai/integrations)
 
 ## License
 
@@ -400,6 +400,6 @@ MIT
 ## Links
 
 - [Fastn Platform](https://fastn.ai)
-- [Fastn SDK](https://github.com/fastnai/fastn-sdk)
+- [Fastn SDK](https://github.com/fastn-ai/fastn-sdk)
 - [MCP Specification](https://modelcontextprotocol.io/)
 - [Documentation](https://docs.fastn.ai)
