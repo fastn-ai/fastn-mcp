@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "mcp>=1.2.0",
+    "mcp>=1.2.0,<2",
     "fastn-ai>=0.3.7",
 ]
 
