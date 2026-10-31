@@ -1,1 +1,0 @@
-"""Fastn MCP tool handlers."""
