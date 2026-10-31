@@ -6,7 +6,7 @@ There is nothing to install or host. This repository holds no server code: it po
 
 - **Sign in and connect tools:** https://connect.fastn.dev
 - **Documentation:** https://connect.fastn.dev/docs
-- **MCP endpoint:** `https://mcp.fastn.dev/<your-org>` (Home in Fastn Connect shows yours, with a copy button)
+- **MCP endpoint:** `https://mcp.fastn.dev` (or `https://mcp.fastn.dev/fastn-workspace` to connect straight to your fastn workspace; see [Which URL to use](#which-url-to-use))
 
 > **Using an older guide?** `https://mcp.live.fastn.ai/shttp`, the `pip install fastn-mcp-server` package and its `find_tools` / `execute_tool` / flow tools belong to the retired v1 server. That endpoint no longer serves traffic. Use `https://mcp.fastn.dev` instead. The v1 code is kept on the [`v1` branch](https://github.com/fastn-ai/fastn-mcp/tree/v1) for reference only.
 
@@ -17,6 +17,17 @@ There is nothing to install or host. This repository holds no server code: it po
 3. **Add it to your client** as a remote MCP server over Streamable HTTP. On first connect the client opens a browser tab where you sign in to Fastn Connect once; there is no token to paste.
 
 Full guide: [Quickstart](https://connect.fastn.dev/docs/quickstart).
+
+## Which URL to use
+
+| URL | What it connects |
+|-----|------------------|
+| `https://mcp.fastn.dev` | Your org and workspace, taken from your sign-in or access key. On first connect you pick which tools the client gets. |
+| `https://mcp.fastn.dev/<org>`, `https://mcp.fastn.dev/<org>/<workspace>` | The same, with the org (or a named workspace in it) named explicitly. Home in Fastn Connect shows this form. |
+| `https://mcp.fastn.dev/fastn-workspace` | Only Fastn Workspace: your fastn workflows and the fastn platform tools. No tool picker; signing in is the consent. This is the URL the fastn dashboard hands out. `/<org>/fastn-workspace` pins the org. |
+| `https://mcp.fastn.dev/<org>/<workspace>/<app>` | A single app, with no tool picker. |
+
+A trailing `/mcp` is optional on every form. Details: [Gateway API, headers, and access keys](https://connect.fastn.dev/docs/api-reference).
 
 ## Connect a client
 
